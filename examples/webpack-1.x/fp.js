@@ -1,18 +1,18 @@
-var addYears = require('date-fns/fp/addYears')
-var dateFns = require('date-fns/fp')
-var formatWithOptions = dateFns.formatWithOptions
-var eo = require('date-fns/locale/eo')
+let addYears = require('date-fns/fp/addYears')
+let dateFns = require('date-fns/fp')
+let formatWithOptions = dateFns.formatWithOptions
+let eo = require('date-fns/locale/eo')
 
-var addFiveYears = addYears(5)
-var dateToString = formatWithOptions({locale: eo}, 'd MMMM yyyy')
+let addFiveYears = addYears(5)
+let dateToString = formatWithOptions({locale: eo}, 'd MMMM yyyy')
 
-var dates = [
+let dates = [
   new Date(2017, 0 /* Jan */, 1),
   new Date(2017, 1 /* Feb */, 11),
   new Date(2017, 6 /* Jul */, 2)
 ]
 
-var formattedDates = dates
+let formattedDates = dates
   .map((date) => dateToString(addFiveYears(date)))
   .join(', ')
 
