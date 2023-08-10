@@ -1,10 +1,10 @@
-var fs = require('fs')
+let fs = require('fs')
 
-var countFilename = './tmp/tests_count.txt'
+let countFilename = './tmp/tests_count.txt'
 
 function countReporter() {
   this.onRunComplete = function (_, result) {
-    var runCount = result.success
+    let runCount = result.success
 
     fs.readFile(
       countFilename,
@@ -14,7 +14,7 @@ function countReporter() {
           throw err
         }
 
-        var totalCount = (parseInt(data, 10) || 0) + runCount
+        let totalCount = (parseInt(data, 10) || 0) + runCount
 
         fs.writeFile(
           countFilename,
